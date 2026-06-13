@@ -377,8 +377,7 @@
   }
   @media(max-width:560px){
     section{padding:48px 0}
-    /* кегль подобран так, чтобы «ПРЕДПРИНИМАТЕЛЬСТВА» помещалось целой строкой без переносов */
-    .h2{font-size:clamp(17px,5.5vw,32px)}
+    .h2{font-size:clamp(20px,6vw,32px)}
     .format-grid,.spk-grid{grid-template-columns:1fr}
     .tl-row{grid-template-columns:1fr;gap:4px}
     .brand .divider,.brand .forum-mark{display:none}
@@ -701,6 +700,23 @@
     burger.setAttribute("aria-expanded", "false");
     burger.textContent = "☰";
   }));
+
+  // Автоподгонка заголовков: ужимаем кегль, пока самое длинное слово не влезет целиком (без переносов)
+  function fitHeadings(){
+    document.querySelectorAll(".h2").forEach(el => {
+      el.style.fontSize = "";
+      let size = parseFloat(getComputedStyle(el).fontSize);
+      let guard = 40;
+      while (el.scrollWidth > el.clientWidth + 1 && size > 13 && guard-- > 0){
+        size -= 1;
+        el.style.fontSize = size + "px";
+      }
+    });
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHeadings);
+  fitHeadings();
+  let fitT;
+  addEventListener("resize", () => { clearTimeout(fitT); fitT = setTimeout(fitHeadings, 150); }, {passive:true});
 
   // ===== Анимации (уважает prefers-reduced-motion) =====
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
