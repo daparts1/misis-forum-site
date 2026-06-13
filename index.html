@@ -377,9 +377,8 @@
   }
   @media(max-width:560px){
     section{padding:48px 0}
-    /* длинные слова («ПРЕДПРИНИМАТЕЛЬСТВА») не влезают в Unbounded — мельче кегль + словарные переносы */
-    .h2{font-size:clamp(23px,6.5vw,32px);hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
-    h3{hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+    /* кегль подобран так, чтобы «ПРЕДПРИНИМАТЕЛЬСТВА» помещалось целой строкой без переносов */
+    .h2{font-size:clamp(17px,5.5vw,32px)}
     .format-grid,.spk-grid{grid-template-columns:1fr}
     .tl-row{grid-template-columns:1fr;gap:4px}
     .brand .divider,.brand .forum-mark{display:none}
