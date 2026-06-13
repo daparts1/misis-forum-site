@@ -645,7 +645,8 @@
     <button class="game-close" id="game-close" aria-label="Закрыть игру">✕</button>
     <canvas id="game-canvas" width="740" height="240"></canvas>
   </div>
-  <p class="game-hint"><b>Тап / пробел</b> — прыжок · <b>Esc</b> — выход<br><b style="color:#CBA65F">500+ очков</b> = мерч на стойке клуба 🎁</p>
+  <p class="game-hint"><b>Тап / пробел</b> — прыжок · <b>Esc</b> — выход<br><b style="color:#CBA65F">Топ-3 рекордсмена</b> получают мерч на форуме 🎁</p>
+  <a class="btn ghost small" href="https://t.me/+YQnCpLf7jzgwZGUy" target="_blank" rel="noopener">Прислать скрин в чат клуба</a>
 </div>
 
 <footer>
@@ -809,7 +810,7 @@
     const narrow = () => W < 500;                     // узкий экран: ниже скорость, волк левее
     const wolfSprite = new Image(); wolfSprite.src = "assets/kp_wolf.svg";
 
-    const HI_KEY = "mbf_runner_hi", MERCH = 500;
+    const HI_KEY = "mbf_runner_hi";
     const GOLD = "#CBA65F", BLUE = "#2B59FF", CREAM = "#F4EBDC";
     let running=false, dead=false, deadAt=0, rafId=null, frame=0;
     let hi = +(localStorage.getItem(HI_KEY) || 0);
@@ -1060,10 +1061,6 @@
       ctx.fillText("СЧЁТ " + score, 18, 32);
       ctx.fillStyle = "rgba(244,235,220,.45)"; ctx.font = "700 12px Unbounded, sans-serif";
       ctx.fillText("HI " + hi, 18, 52);
-      if (score >= MERCH){
-        ctx.fillStyle = GOLD; ctx.font = "700 12px Unbounded, sans-serif";
-        ctx.fillText("МЕРЧ ТВОЙ! 🎁", 18, 72);
-      }
       if (dead){
         const bw = Math.min(440, W - 16);
         ctx.fillStyle = "rgba(6,7,11,.78)";
@@ -1075,13 +1072,13 @@
         ctx.font = "600 13.5px Manrope, sans-serif"; ctx.fillStyle = "rgba(244,235,220,.85)";
         ctx.fillText("Счёт " + score + "  ·  Рекорд " + hi, W/2, H/2-4);
         ctx.fillStyle = GOLD;
-        ctx.fillText(score >= MERCH ? "Скриншот на стойку клуба — мерч твой 🎁" : MERCH + "+ очков = мерч на стойке клуба 🎁", W/2, H/2+20);
+        ctx.fillText("Топ-3 рекорда = мерч! Пришли скрин в чат клуба 🎁", W/2, H/2+20);
         ctx.fillStyle = "rgba(244,235,220,.6)";
         ctx.fillText("Пробел или тап — ещё раз", W/2, H/2+44);
       } else if (frame < 3){
         ctx.textAlign="center";
         ctx.fillStyle = "rgba(244,235,220,.85)"; ctx.font = "600 14px Manrope, sans-serif";
-        ctx.fillText("Пробел или тап — прыжок! " + MERCH + "+ очков = мерч 🎁", W/2, H/2);
+        ctx.fillText("Тап или пробел — прыжок! Топ-3 рекорда получают мерч 🎁", W/2, H/2);
       }
     }
     function loop(){
