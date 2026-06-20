@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MISIS Business Forum 2026 — 10 октября, Москва</title>
+<meta name="description" content="MISIS Business Forum 2026 — крупнейшее предпринимательское событие НИТУ МИСИС. 10 октября 2026, Москва, Ленинский проспект, 4. Топ-спикеры, менторская гостиная, питч-сессия, нетворкинг. Вход свободный по регистрации.">
+<!-- при переезде на свой домен — обновить og:image и og:url -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="MISIS Business Forum 2026 — 10 октября, Москва">
+<meta property="og:description" content="Топ-спикеры, менторская гостиная, питч-сессия стартапов и нетворкинг для 1000 участников. Вход свободный по регистрации.">
+<meta property="og:image" content="https://daparts1.github.io/misis-forum-site/v2/assets/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://daparts1.github.io/misis-forum-site/v2/">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/kp_wolf.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#06070B;
+    --bg-soft:#0C0E15;
+    --bg-card:#11131C;
+    --blue:#2B59FF;
+    --blue-bright:#3D6BFF;
+    --blue-dark:#1D45D6;
+    --cream:#F4EBDC;
+    --cream-dim:rgba(244,235,220,.62);
+    --gold:#CBA65F;
+    --coral:#FF5468;
+    --line:rgba(244,235,220,.13);
+    --radius:20px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{overflow-x:clip;max-width:100%}
+  @supports not (overflow:clip){html,body{overflow-x:hidden}}
+  [id]{scroll-margin-top:88px}
+  ::selection{background:var(--blue);color:#fff}
+  :focus-visible{outline:2px solid var(--blue-bright);outline-offset:3px;border-radius:4px}
+  body{
+    background:var(--bg);
+    color:var(--cream);
+    font-family:'Manrope',system-ui,sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{font-family:'Unbounded',sans-serif;line-height:1.04;font-weight:800}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 26px}
+  section{padding:104px 0;position:relative}
+
+  /* афишный «билетный» ярлык вместо обычного eyebrow */
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Unbounded';font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--bg);font-weight:700;margin-bottom:22px;
+    background:var(--gold);padding:8px 16px 8px 14px;border-radius:999px;
+  }
+  .eyebrow::before{content:"";width:8px;height:8px;background:var(--bg);
+    clip-path:polygon(0 0,50% 0,50% 50%,100% 50%,100% 100%,0 100%)}
+  /* гигантские афишные заголовки секций */
+  .h2{font-size:clamp(34px,8vw,86px);margin-bottom:18px;text-transform:uppercase;letter-spacing:-.02em;line-height:.96;overflow-wrap:normal;word-break:keep-all;hyphens:none;text-wrap:balance}
+  .h2 .blue{color:var(--blue-bright)}
+  .h2 .out{color:transparent;-webkit-text-stroke:2px var(--cream);text-stroke:2px var(--cream)}
+  .sub{color:var(--cream-dim);max-width:660px;font-size:clamp(16px,2vw,19px)}
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed;inset:0 0 auto 0;z-index:50;
+    -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+    background:rgba(6,7,11,.7);
+    border-bottom:1px solid var(--line);
+    transition:box-shadow .3s;
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand img{height:38px;width:auto;display:block}
+  .brand .divider{width:1px;height:28px;background:var(--line)}
+  .brand .forum-mark{font-family:'Unbounded';font-size:10.5px;font-weight:700;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--cream-dim);line-height:1.45}
+  .brand .forum-mark b{color:var(--blue-bright);font-weight:800}
+  .nav-links{display:flex;gap:26px;font-size:14px;font-weight:700}
+  .nav-links a{color:var(--cream-dim);transition:color .2s;position:relative}
+  .nav-links a:hover{color:var(--cream)}
+  .burger{
+    display:none;background:none;border:1px solid var(--line);border-radius:12px;
+    width:44px;height:44px;cursor:pointer;color:var(--cream);
+    align-items:center;justify-content:center;font-size:20px;line-height:1;
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    background:var(--blue);color:#fff;font-family:'Unbounded';font-weight:700;font-size:14px;
+    padding:15px 30px;border-radius:999px;border:1px solid var(--blue);letter-spacing:.01em;
+    transition:transform .15s,background .2s,box-shadow .3s;cursor:pointer;text-transform:uppercase;
+  }
+  .btn:hover{background:var(--blue-bright);transform:translateY(-2px);box-shadow:0 12px 36px rgba(43,89,255,.45)}
+  .btn.small{padding:11px 20px;font-size:12px;min-height:44px}
+  .btn.gold{background:var(--gold);border-color:var(--gold);color:#1a1407}
+  .btn.gold:hover{background:#dcb978;box-shadow:0 12px 36px rgba(203,166,95,.4)}
+  .btn.ghost{background:transparent;color:var(--cream);border-color:var(--line)}
+  .btn.ghost:hover{border-color:var(--cream);background:transparent;box-shadow:0 10px 28px rgba(244,235,220,.12)}
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+    position:relative;padding:150px 0 70px;overflow:hidden;
+    background:
+      radial-gradient(1000px 560px at 82% -8%, rgba(43,89,255,.24), transparent 60%),
+      radial-gradient(760px 540px at -10% 105%, rgba(43,89,255,.12), transparent 60%),
+      var(--bg);
+  }
+  .hero::after{
+    content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(740px 460px at 78% 18%, rgba(43,89,255,.16), transparent 62%);
+    animation:heroGlow 7s ease-in-out infinite alternate;
+  }
+  .hero .wrap{position:relative;z-index:2;pointer-events:none}
+  .hero .wrap a,.hero .wrap button{pointer-events:auto}
+  /* афишные «билетные» метки даты/места */
+  .hero-tickets{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+  .tk{
+    display:inline-flex;align-items:center;gap:9px;font-family:'Unbounded';
+    font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    padding:9px 16px;border-radius:999px;border:1px solid var(--line);
+    background:rgba(12,14,21,.6);color:var(--cream);
+  }
+  .tk.accent{background:var(--blue);border-color:var(--blue);color:#fff}
+  .tk b{color:var(--cream)}
+  .tk .dot{width:7px;height:7px;background:var(--gold);border-radius:50%}
+  .tk.accent .dot{background:#fff}
+  .hero h1{
+    font-size:clamp(46px,12.5vw,150px);font-weight:900;text-transform:uppercase;
+    letter-spacing:-.035em;margin-bottom:8px;line-height:.86;overflow-wrap:normal;word-break:keep-all;hyphens:none;
+  }
+  .hero h1 .hline{display:block}
+  .hero h1 .blue{color:var(--blue-bright)}
+  .hero h1 .out{color:transparent;-webkit-text-stroke:clamp(1.5px,.4vw,3px) var(--cream)}
+  .hero h1 .pixel{
+    display:inline-block;width:.5em;height:.5em;background:var(--blue);
+    margin-left:.1em;vertical-align:baseline;
+    clip-path:polygon(0 0,50% 0,50% 50%,100% 50%,100% 100%,0 100%);
+  }
+  .hero p.tag{font-size:clamp(16px,2vw,21px);color:var(--cream-dim);max-width:660px;margin:26px 0 38px}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:54px}
+  .hero .wolf-mark{
+    position:absolute;right:3%;top:50%;transform:translateY(-52%);
+    width:min(54vw,720px);opacity:.13;user-select:none;z-index:1;
+    cursor:pointer;transition:opacity .3s;
+  }
+  .hero .wolf-mark:hover{opacity:.22}
+
+  .countdown{display:flex;gap:12px;flex-wrap:wrap}
+  .cd-cell{
+    min-width:96px;text-align:center;border:1px solid var(--line);
+    border-radius:16px;padding:16px 12px;background:rgba(12,14,21,.6);
+  }
+  .cd-cell b{font-family:'Unbounded';font-size:clamp(26px,3vw,38px);display:block;color:var(--cream);font-weight:800}
+  .cd-cell span{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--cream-dim);font-weight:700}
+
+  /* ---------- marquee (афишная бегущая лента) ---------- */
+  .marquee{
+    background:var(--blue);color:#fff;overflow:hidden;
+    border-top:2px solid var(--blue-dark);border-bottom:2px solid var(--blue-dark);
+    padding:18px 0;white-space:nowrap;
+  }
+  .marquee.gold{background:var(--gold);color:#1a1407;border-color:#b08e44}
+  .marquee-track{display:inline-flex;align-items:center;animation:marq 32s linear infinite;will-change:transform}
+  .marquee.gold .marquee-track{animation-duration:38s;animation-direction:reverse}
+  .marquee-track span{
+    font-family:'Unbounded';font-size:clamp(18px,2.6vw,28px);font-weight:800;
+    text-transform:uppercase;letter-spacing:.02em;padding:0 26px;display:inline-flex;align-items:center;gap:26px;
+  }
+  .marquee-track span::after{content:"✦";font-size:.6em;opacity:.7}
+  .marquee:hover .marquee-track{animation-play-state:paused}
+
+  /* ---------- stats ---------- */
+  .stats{background:var(--bg-soft);padding:78px 0;border-bottom:1px solid var(--line)}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .stat{border-left:3px solid var(--blue);padding-left:20px}
+  .stat b{font-family:'Unbounded';font-size:clamp(34px,4.4vw,58px);display:block;margin-bottom:6px;font-variant-numeric:tabular-nums;color:var(--cream);font-weight:900;line-height:1}
+  .stat span{font-size:14px;color:var(--cream-dim);font-weight:600}
+
+  /* ---------- speakers / лайнап (хедлайнеры) ---------- */
+  #speakers{background:var(--bg)}
+  .lineup-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px}
+  .spk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+  .spk{
+    position:relative;border-radius:var(--radius);overflow:hidden;
+    background:var(--bg-card);border:1px solid var(--line);
+    min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;
+    transition:transform .25s,border-color .25s;isolation:isolate;
+  }
+  .spk:hover{transform:translateY(-5px);border-color:var(--blue)}
+  .spk-photo{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 24%;
+    z-index:0;filter:grayscale(.25) contrast(1.02);transition:filter .3s,transform .4s;
+  }
+  .spk:hover .spk-photo{filter:grayscale(0);transform:scale(1.04)}
+  .spk::before{
+    content:"";position:absolute;inset:0;z-index:1;
+    background:linear-gradient(180deg,rgba(6,7,11,0) 30%,rgba(6,7,11,.55) 60%,rgba(6,7,11,.96) 100%);
+  }
+  .spk-body{position:relative;z-index:2;padding:22px}
+  .spk-num{
+    position:absolute;top:16px;left:18px;z-index:2;font-family:'Unbounded';font-weight:800;
+    font-size:13px;color:var(--gold);letter-spacing:.08em;
+    text-shadow:0 1px 8px rgba(6,7,11,.9),0 0 14px rgba(6,7,11,.7);
+  }
+  .spk-name{font-family:'Unbounded';font-size:clamp(18px,2.2vw,23px);font-weight:800;text-transform:uppercase;line-height:1.05;margin-bottom:8px}
+  .spk p{font-size:13.5px;color:rgba(244,235,220,.82);line-height:1.5}
+  .draft-badge{
+    display:inline-flex;vertical-align:middle;margin-left:6px;
+    font-family:'Manrope';font-size:11px;font-weight:800;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--gold);border:1px solid rgba(203,166,95,.45);
+    border-radius:999px;padding:6px 14px;white-space:nowrap;
+  }
+
+  /* ---------- program / сцены ---------- */
+  #program{background:var(--bg-soft)}
+  .format-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px}
+  .fmt{
+    position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:32px;
+    background:var(--bg-card);overflow:hidden;transition:transform .2s,border-color .2s;
+  }
+  .fmt:hover{transform:translateY(-4px);border-color:var(--blue)}
+  .fmt::before{
+    content:attr(data-stage);position:absolute;top:-14px;right:14px;
+    font-family:'Unbounded';font-size:78px;font-weight:900;color:rgba(43,89,255,.10);line-height:1;pointer-events:none;
+  }
+  .fmt h3{font-size:21px;margin:0 0 10px;text-transform:uppercase;position:relative;z-index:1}
+  .fmt .time{display:inline-block;font-family:'Unbounded';font-size:12px;font-weight:700;color:var(--gold);
+    border:1px solid rgba(203,166,95,.45);border-radius:999px;padding:5px 14px;margin-bottom:14px}
+  .fmt p{font-size:14.5px;color:var(--cream-dim);position:relative;z-index:1}
+  .fmt a{display:inline-block;padding:8px 0;color:var(--blue-bright);font-weight:700}
+
+  .timeline{margin-top:60px;border-top:1px solid var(--line)}
+  .tl-row{
+    display:grid;grid-template-columns:200px 1fr;gap:24px;align-items:baseline;
+    padding:22px 0;border-bottom:1px solid var(--line);transition:padding-left .2s;
+  }
+  .tl-row:hover{padding-left:10px}
+  .tl-row b{font-family:'Unbounded';font-size:17px;color:var(--blue-bright);font-weight:700}
+  .tl-row span{font-size:16px}
+  .tl-row small{display:block;color:var(--cream-dim);font-size:13.5px;margin-top:3px}
+
+  /* ---------- audience / для кого (мозаика) ---------- */
+  .aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:48px}
+  .aud{
+    position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:28px;
+    background:var(--bg-card);transition:border-color .2s,transform .2s,background .25s;overflow:hidden;
+  }
+  .aud:hover{border-color:var(--blue);transform:translateY(-4px)}
+  .aud:nth-child(3n+1):hover{background:linear-gradient(180deg,rgba(43,89,255,.10),transparent)}
+  .aud:nth-child(3n+2):hover{background:linear-gradient(180deg,rgba(203,166,95,.10),transparent)}
+  .aud:nth-child(3n):hover{background:linear-gradient(180deg,rgba(255,84,104,.09),transparent)}
+  .aud .arrow{color:var(--blue-bright);font-family:'Unbounded';font-size:22px;margin-bottom:16px;display:block;font-weight:800}
+  .aud h3{font-size:17px;margin-bottom:8px;text-transform:uppercase}
+  .aud p{font-size:14px;color:var(--cream-dim)}
+
+  /* ---------- about club ---------- */
+  .club{background:var(--cream);color:#101218}
+  .club .eyebrow{background:var(--blue);color:#fff}
+  .club .eyebrow::before{background:#fff}
+  .club .h2 .out{-webkit-text-stroke-color:#101218}
+  .club .sub{color:rgba(16,18,24,.7)}
+  .club-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:start}
+  .club-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .club-stat{
+    background:#fff;border-radius:var(--radius);padding:28px;
+    border:1px solid rgba(16,18,24,.08);position:relative;overflow:hidden;
+  }
+  .club-stat b{font-family:'Unbounded';font-size:clamp(28px,3.6vw,42px);color:var(--blue);display:block;margin-bottom:4px;font-variant-numeric:tabular-nums;min-height:1.25em;font-weight:900}
+  .club-stat span{font-size:14px;color:rgba(16,18,24,.65);font-weight:600}
+  .club ul{list-style:none;margin:26px 0 34px}
+  .club ul li{padding-left:30px;position:relative;margin-bottom:13px;font-size:16px}
+  .club ul li::before{content:"↗";position:absolute;left:0;color:var(--blue);font-weight:800;font-family:'Unbounded'}
+
+  /* ---------- partners ---------- */
+  #partners{background:var(--bg)}
+  .prt-logos{display:flex;gap:14px;flex-wrap:wrap;margin-top:48px}
+  .prt-slot{
+    flex:1;min-width:160px;height:84px;border:1px dashed var(--line);border-radius:14px;
+    display:flex;align-items:center;justify-content:center;background:var(--bg-card);
+    color:var(--cream-dim);font-family:'Unbounded';font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+  }
+  .prt-band{
+    margin-top:36px;border-radius:var(--radius);
+    padding:52px 40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px;
+    background:
+      radial-gradient(560px 280px at 88% 0%, rgba(43,89,255,.5), transparent 60%),
+      var(--blue-dark);
+    color:#fff;
+  }
+  .prt-band h3{font-family:'Unbounded';font-size:clamp(22px,3vw,32px);text-transform:uppercase;max-width:560px;line-height:1.1;overflow-wrap:normal;word-break:keep-all;hyphens:none;text-wrap:balance;min-width:0;flex:1 1 280px}
+
+  /* ---------- faq ---------- */
+  details{
+    border:1px solid var(--line);border-radius:16px;margin-bottom:12px;
+    background:var(--bg-card);overflow:hidden;
+  }
+  summary{
+    cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;
+    padding:22px 26px;font-weight:700;font-size:16px;gap:16px;font-family:'Unbounded';
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:'Unbounded';color:var(--gold);font-size:22px;transition:transform .2s}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{padding:0 26px 22px;color:var(--cream-dim);font-size:15px}
+
+  /* ---------- final cta ---------- */
+  .final{
+    text-align:center;
+    background:
+      radial-gradient(760px 440px at 50% 120%, rgba(43,89,255,.34), transparent 65%),
+      var(--bg);
+  }
+  .final h2{font-size:clamp(34px,7vw,84px);text-transform:uppercase;margin-bottom:18px;letter-spacing:-.02em}
+  .final .sub{margin:0 auto 38px}
+
+  footer{border-top:1px solid var(--line);padding:46px 0;font-size:14px;color:var(--cream-dim)}
+  .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:flex-start}
+  .foot a{color:var(--cream);font-weight:600}
+  .foot a:hover{color:var(--blue-bright)}
+  .foot .logo{font-family:'Unbounded';font-size:14px;font-weight:700;letter-spacing:.04em;margin-bottom:6px}
+  .foot .logo span{color:var(--blue-bright)}
+
+  /* ---------- липкая кнопка билетов (афишный приём) ---------- */
+  .sticky-cta{
+    position:fixed;right:22px;bottom:22px;z-index:48;
+    box-shadow:0 14px 40px rgba(43,89,255,.5);
+    opacity:0;transform:translateY(20px) scale(.9);pointer-events:none;
+    transition:opacity .35s,transform .35s;
+  }
+  .sticky-cta.show{opacity:1;transform:none;pointer-events:auto}
+
+  /* ---------- мини-игра: волк-раннер (пасхалка) ---------- */
+  .game-overlay{
+    position:fixed;inset:0;z-index:100;display:none;
+    align-items:center;justify-content:center;flex-direction:column;gap:18px;
+    background:rgba(6,7,11,.92);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);padding:16px;
+  }
+  .game-overlay.open{display:flex}
+  .game-panel{position:relative;width:min(94vw,740px)}
+  .game-panel canvas{
+    width:100%;display:block;border:1px solid var(--line);border-radius:var(--radius);
+    background:linear-gradient(180deg,#0A0C12,#06070B);touch-action:manipulation;
+  }
+  .game-close{
+    position:absolute;top:8px;right:8px;width:44px;height:44px;border-radius:50%;
+    background:var(--blue);color:#fff;border:none;cursor:pointer;font-size:18px;line-height:1;z-index:2;
+  }
+  .game-hint{font-size:13px;color:var(--cream-dim);text-align:center;max-width:min(94vw,740px);line-height:1.7}
+  .game-hint b{color:var(--cream)}
+  @media (hover:none){ .hero .wolf-mark{animation:wolfPulse 3.2s ease-in-out infinite} }
+  @keyframes wolfPulse{0%,100%{opacity:.1}50%{opacity:.22}}
+
+  /* ---------- motion ---------- */
+  @keyframes fadeUp{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+  @keyframes heroGlow{from{opacity:.45}to{opacity:1}}
+  @keyframes pixelPulse{0%,100%{opacity:1}50%{opacity:.5}}
+  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  .hline{opacity:0;animation:fadeUp .8s cubic-bezier(.16,1,.3,1) forwards}
+  .hero h1 .hline:nth-child(1){animation-delay:.1s}
+  .hero h1 .hline:nth-child(2){animation-delay:.24s}
+  .hero h1 .hline:nth-child(3){animation-delay:.38s}
+  .hero-tickets{animation:fadeUp .7s .35s cubic-bezier(.16,1,.3,1) both}
+  .hero p.tag{animation:fadeUp .7s .5s cubic-bezier(.16,1,.3,1) both}
+  .hero-cta{animation:fadeUp .7s .6s cubic-bezier(.16,1,.3,1) both}
+  .countdown{animation:fadeUp .7s .72s cubic-bezier(.16,1,.3,1) both}
+  .hero h1 .pixel{animation:pixelPulse 2.4s ease-in-out 1.6s infinite}
+
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  .aud,.fmt,.spk,.club-stat{position:relative}
+  .aud::after,.fmt::after,.club-stat::after{
+    content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%), rgba(43,89,255,.18), transparent 65%);
+    opacity:0;transition:opacity .25s;z-index:0;
+  }
+  .club-stat::after{background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%), rgba(43,89,255,.10), transparent 65%)}
+  .aud:hover::after,.fmt:hover::after,.club-stat:hover::after{opacity:1}
+  header.scrolled{box-shadow:0 8px 28px rgba(0,0,0,.5)}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .hline,.hero-tickets,.hero p.tag,.hero-cta,.countdown{opacity:1;transform:none}
+    .reveal{opacity:1;transform:none}
+    .marquee-track{animation:none!important}
+    /* без анимации лента статична — даём дочитать прокруткой, а не обрезаем */
+    .marquee{overflow-x:auto}
+  }
+
+  /* ---------- responsive ---------- */
+  @media(max-width:980px){
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:32px 24px}
+    .aud-grid,.spk-grid{grid-template-columns:repeat(2,1fr)}
+    /* нечётная (9-я) карточка спикера не висит одна в полряда */
+    .spk-grid > .spk:last-child:nth-child(odd){grid-column:span 2}
+    .club-grid{grid-template-columns:minmax(0,1fr)}
+    .burger{display:flex}
+    .nav-links{
+      display:none;position:fixed;top:72px;left:0;right:0;
+      flex-direction:column;gap:0;padding:8px 26px 18px;
+      background:rgba(6,7,11,.98);backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-links.open{display:flex}
+    .nav-links a{padding:14px 0;font-size:16px;border-bottom:1px solid rgba(244,235,220,.07)}
+    .nav-links a:last-child{border-bottom:none}
+  }
+  @media(max-width:560px){
+    section{padding:56px 0}
+    .h2{font-size:clamp(30px,11vw,52px)}
+    /* тонкий контур: при ужатом кегле 2px stroke «съедал» буквы */
+    .h2 .out,.hero h1 .out{-webkit-text-stroke-width:1px}
+    /* FAQ: длинные вопросы переносятся — «+» к верху, не по центру */
+    summary{align-items:flex-start;font-size:14px;padding:18px 20px}
+    /* «Для кого»: Manrope уже Unbounded — заголовки карточек влезают в 2 колонки */
+    .aud h3{font-family:'Manrope',sans-serif;font-weight:800;overflow-wrap:break-word}
+    .format-grid{grid-template-columns:1fr}
+    .spk-grid{grid-template-columns:1fr;gap:14px}
+    .spk{min-height:300px}
+    .tl-row{grid-template-columns:1fr;gap:4px}
+    .brand .divider,.brand .forum-mark{display:none}
+    .brand img{height:32px}
+    .hero{padding:130px 0 56px}
+    .hero .wolf-mark{width:92vw;opacity:.1}
+    .stats{padding:44px 0}
+    .stat b{font-size:34px}
+    .hero-cta{flex-direction:column;align-items:stretch}
+    .hero-cta .btn{width:100%}
+    .aud-grid{grid-template-columns:1fr 1fr;gap:10px}
+    .aud{padding:18px}
+    .aud .arrow{margin-bottom:10px;font-size:18px}
+    .aud h3{font-size:13.5px}
+    .aud p{font-size:12.5px}
+    .prt-slot{flex:0 0 calc(50% - 7px);min-width:0}
+    .prt-band{padding:34px 24px}
+    .final-cta-row{flex-direction:column;align-items:stretch}
+    .final-cta-row .btn{width:100%}
+    .foot a{display:inline-block;padding:6px 0}
+    .reveal{transition-duration:.45s}
+    .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+    .cd-cell{min-width:0;padding:12px 4px}
+    .cd-cell b{font-size:clamp(18px,5.5vw,24px)}
+    .cd-cell span{font-size:8.5px;letter-spacing:.01em;white-space:nowrap}
+    .sticky-cta{right:14px;bottom:14px}
+    .stat,.aud,.fmt,.spk,.club-stat,.club-grid > *,.tl-row > *{min-width:0}
+    .tk{overflow-wrap:anywhere}
+  }
+  @media(max-width:380px){
+    .nav .btn.small{padding:9px 14px;font-size:11px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <img src="assets/kp_logo_line_light.svg" alt="МИСИС Entrepreneurs — Клуб предпринимательства МИСИС">
+      <span class="divider"></span>
+      <span class="forum-mark">Business<br>Forum <b>2026</b></span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#speakers">Спикеры</a>
+      <a href="#program">Программа</a>
+      <a href="#about">Для кого</a>
+      <a href="#club">Организатор</a>
+      <a href="#partners">Партнёры</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a class="btn gold small" href="#register">Регистрация</a>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav-links">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="top">
+  <img class="wolf-mark" src="assets/kp_wolf.svg" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div class="hero-tickets">
+      <span class="tk accent"><span class="dot"></span><b>10 октября 2026</b></span>
+      <span class="tk"><span class="dot"></span>Ленинский проспект, 4 · НИТУ МИСИС</span>
+      <span class="tk"><span class="dot"></span>Вход свободный</span>
+    </div>
+    <h1>
+      <span class="hline">MISIS</span>
+      <span class="hline">Business <span class="blue">Forum</span></span>
+      <span class="hline out">2026<span class="pixel"></span></span>
+    </h1>
+    <p class="tag">За один день поговоришь с основателями крупных компаний, запитчишь свою идею инвесторам и найдёшь команду. Тысяча участников, вход свободный.</p>
+    <div class="hero-cta">
+      <!-- TODO: когда появится ссылка Timepad — поставить её сюда напрямую (href="https://...timepad.ru/...", target="_blank" rel="noopener") -->
+      <a class="btn gold" href="#register">Зарегистрироваться на Timepad</a>
+      <a class="btn ghost" href="#program">Смотреть программу</a>
+    </div>
+    <div class="countdown" id="countdown" aria-label="До начала форума">
+      <div class="cd-cell"><b id="cd-d">—</b><span>дней</span></div>
+      <div class="cd-cell"><b id="cd-h">—</b><span>часов</span></div>
+      <div class="cd-cell"><b id="cd-m">—</b><span>минут</span></div>
+      <div class="cd-cell"><b id="cd-s">—</b><span>секунд</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE 1 -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>10 октября</span><span>Москва</span><span>~1000 участников</span><span>вход свободный</span><span>топ-спикеры</span><span>питч-сессия</span><span>нетворкинг</span>
+    <span>10 октября</span><span>Москва</span><span>~1000 участников</span><span>вход свободный</span><span>топ-спикеры</span><span>питч-сессия</span><span>нетворкинг</span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat"><b>~1000</b><span>участников — твой будущий нетворк</span></div>
+    <div class="stat"><b>4</b><span>площадки — выбирай свой трек</span></div>
+    <div class="stat"><b>7</b><span>спикеров — реальный опыт из первых рук</span></div>
+    <div class="stat"><b>9</b><span>часов — целый день пользы</span></div>
+  </div>
+</div>
+
+<!-- SPEAKERS / ЛАЙНАП -->
+<section id="speakers">
+  <div class="wrap">
+        <div class="lineup-head">
+      <div>
+        <span class="eyebrow">Лайнап</span>
+        <h2 class="h2">Состав объявим<br>в канале клуба</h2>
+      </div>
+      <p class="sub" style="margin-bottom:6px">Ведём переговоры с основателями компаний федерального масштаба. Подписчики Telegram-канала клуба узнают имена первыми.</p>
+    </div>
+    <div class="spk-grid">
+      <div class="spk" style="min-height:240px"><span class="spk-num">01</span><div class="spk-body"><div style="font-family:'Unbounded';font-weight:800;font-size:44px;color:var(--gold);line-height:1;margin-bottom:10px">?</div><p>Основатель компании, продукция которой есть почти в каждом доме</p></div></div>
+      <div class="spk" style="min-height:240px"><span class="spk-num">02</span><div class="spk-body"><div style="font-family:'Unbounded';font-weight:800;font-size:44px;color:var(--gold);line-height:1;margin-bottom:10px">?</div><p>Инвестор, который решает, какие стартапы получат деньги</p></div></div>
+      <div class="spk" style="min-height:240px"><span class="spk-num">03</span><div class="spk-body"><div style="font-family:'Unbounded';font-weight:800;font-size:44px;color:var(--gold);line-height:1;margin-bottom:10px">?</div><p>Блогер-миллионник — о контенте как бизнесе</p></div></div>
+    </div>
+    <div style="margin-top:36px">
+      <a class="btn ghost" href="https://t.me/misis_entrepreneurs" target="_blank" rel="noopener">Следить за анонсами в Telegram</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE 2 -->
+<div class="marquee gold" aria-hidden="true">
+  <div class="marquee-track">
+    <span>актовый зал</span><span>менторская гостиная</span><span>питч-сессия</span><span>VIP-нетворкинг</span><span>welcome-зона</span><span>стойки партнёров</span>
+    <span>актовый зал</span><span>менторская гостиная</span><span>питч-сессия</span><span>VIP-нетворкинг</span><span>welcome-зона</span><span>стойки партнёров</span>
+  </div>
+</div>
+
+<!-- PROGRAM / СЦЕНЫ -->
+<section id="program">
+  <div class="wrap">
+    <span class="eyebrow">Формат форума</span>
+    <h2 class="h2">4 сцены — <span class="blue">весь день</span></h2>
+    <p class="sub">Программа идёт параллельно: выбирай свой трек или перемещайся между площадками.</p>
+
+    <div class="format-grid">
+      <div class="fmt" data-stage="01"><h3>Актовый зал</h3><span class="time">12:00 — 20:00</span><p>Выступления топ-спикеров и панельная дискуссия с участием 7 основателей и руководителей крупных компаний.</p></div>
+      <div class="fmt" data-stage="02"><h3>Менторская гостиная · Б1</h3><span class="time">13:00 — 15:00</span><p>Личные встречи с менторами: разбор твоего проекта, карьерного трека и точек роста один на один.</p></div>
+      <div class="fmt" data-stage="03"><h3>Питч-сессия · Б2</h3><span class="time">15:00 — 18:30</span><p>Защита студенческих проектов перед экспертами и инвесторами. Обратная связь, которая двигает вперёд.</p><p style="margin-top:10px"><a href="#register">Хочешь выступить с проектом? Отметь это при регистрации →</a></p></div>
+      <div class="fmt" data-stage="04"><h3>VIP-нетворкинг</h3><span class="time">17:00 — 19:00</span><p>Закрытая комната для общения VIP-гостей, спикеров, партнёров и блогеров форума.</p></div>
+    </div>
+
+    <p style="margin-top:30px"><a href="#timeline" style="color:var(--gold);font-weight:700;font-size:15px;font-family:'Unbounded'">Полный тайминг дня ↓</a></p>
+
+    <div class="timeline" id="timeline">
+      <div class="tl-row"><b>11:00</b><span>Открытие регистрации<small>Welcome-зона и стойки партнёров работают весь день — активности и общение с компаниями</small></span></div>
+      <div class="tl-row"><b>12:00</b><span>Старт форума — деловая программа в актовом зале</span></div>
+      <div class="tl-row"><b>13:00 — 15:00</b><span>Менторская гостиная (Б1)</span></div>
+      <div class="tl-row"><b>15:00 — 18:30</b><span>Питч-сессия — защита проектов (Б2)</span></div>
+      <div class="tl-row"><b>17:00 — 19:00</b><span>VIP-нетворкинг</span></div>
+      <div class="tl-row"><b>20:00</b><span>Закрытие форума</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / AUDIENCE -->
+<section id="about" style="background:var(--bg-soft)">
+  <div class="wrap">
+    <span class="eyebrow">Для кого</span>
+    <h2 class="h2">Форум для тех, кто <span class="out">строит своё</span></h2>
+    <p class="sub">Один день, чтобы услышать опыт основателей крупных компаний, получить обратную связь на свой проект и найти команду, ментора или первого инвестора.</p>
+    <div class="aud-grid">
+      <div class="aud"><span class="arrow">↗</span><h3>Студенты МИСИС</h3><p>Прокачать предпринимательские навыки и попасть в комьюнити клуба, не выходя из универа.</p></div>
+      <div class="aud"><span class="arrow">↗</span><h3>Студенты других вузов</h3><p>Познакомиться с экосистемой МИСИС и найти партнёров для своих проектов.</p></div>
+      <div class="aud"><span class="arrow">↗</span><h3>Школьники</h3><p>Увидеть, как выглядит реальное предпринимательство, до поступления в вуз.</p></div>
+      <div class="aud"><span class="arrow">↗</span><h3>Стартаперы</h3><p>Запитчить проект инвесторам и экспертам, получить честную обратную связь.</p></div>
+      <div class="aud"><span class="arrow">↗</span><h3>Студенческие клубы</h3><p>Делегации бизнес-клубов — обменяться опытом и договориться о коллаборациях.</p></div>
+      <div class="aud"><span class="arrow">↗</span><h3>Блогеры и медиа</h3><p>VIP-нетворкинг, контент и знакомства с героями нового поколения бизнеса.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CLUB -->
+<section class="club" id="club">
+  <div class="wrap">
+    <div class="club-grid">
+      <div>
+        <span class="eyebrow">Организатор</span>
+        <img src="assets/kp_logo_line.svg" alt="МИСИС Entrepreneurs" style="height:64px;width:auto;margin:6px 0 26px">
+        <h2 class="h2">Клуб предпринимательства МИСИС</h2>
+        <p class="sub">Платформа для студентов всех направлений, где идеи превращаются в стартапы, а единомышленники — в команду. Строим стартапы и учимся через практику.</p>
+        <ul>
+          <li>Мастер-классы и воркшопы от действующих предпринимателей</li>
+          <li>Менторство от основателей и инвесторов</li>
+          <li>Помощь с акселераторами и подготовкой питчей</li>
+          <li>Поиск команды: разработчики, дизайнеры, маркетологи</li>
+        </ul>
+        <a class="btn" href="https://kpmisis.ru" target="_blank" rel="noopener">Сайт клуба — kpmisis.ru</a>
+      </div>
+      <div class="club-stats">
+        <div class="club-stat"><b>1000+</b><span>участников клуба</span></div>
+        <div class="club-stat"><b>40+</b><span>проведённых мероприятий</span></div>
+        <div class="club-stat"><b>20+</b><span>поддержанных стартапов</span></div>
+        <div class="club-stat"><b>27 млн ₽+</b><span>привлечённых инвестиций</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="wrap">
+    <span class="eyebrow">Партнёры</span>
+    <h2 class="h2">Партнёры форума</h2>
+    <p class="sub">Состав партнёров объявим вместе со спикерами. На форуме их стойки работают весь день: активности, мерч и прямое общение с командами компаний.</p>
+    <div class="prt-logos">
+      <div class="prt-slot">Объявим скоро</div>
+      <div class="prt-slot">Объявим скоро</div>
+      <div class="prt-slot">Объявим скоро</div>
+      <div class="prt-slot">Объявим скоро</div>
+    </div>
+    <div class="prt-band">
+      <h3>Хотите стать партнёром форума на 1000 участников?</h3>
+      <a class="btn gold" href="https://t.me/yyakushevamary" target="_blank" rel="noopener">Написать команде партнёрств</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--bg-soft)">
+  <div class="wrap" style="max-width:880px">
+    <span class="eyebrow">FAQ</span>
+    <h2 class="h2">Частые вопросы</h2>
+    <details>
+      <summary>Сколько стоит участие?</summary>
+      <p>Участие бесплатное — нужна только регистрация. Количество мест ограничено вместимостью площадок.</p>
+    </details>
+    <details>
+      <summary>Кто может прийти?</summary>
+      <p>Студенты МИСИС и любых других вузов, школьники, начинающие предприниматели. Форум открыт для всех, кому интересно предпринимательство.</p>
+    </details>
+    <details>
+      <summary>Где пройдёт форум?</summary>
+      <p>В главном кампусе НИТУ МИСИС: Москва, Ленинский проспект, д. 4. Метро «Октябрьская» или «Шаболовская». Навигация будет на площадке, волонтёры помогут сориентироваться.</p>
+    </details>
+    <details>
+      <summary>Как попасть на питч-сессию со своим проектом?</summary>
+      <p>При регистрации отметь, что хочешь представить проект, — команда форума свяжется с тобой и расскажет об условиях отбора.</p>
+    </details>
+    <details>
+      <summary>Нужно ли быть участником клуба?</summary>
+      <p>Нет. Но если после форума захочешь присоединиться к Клубу предпринимательства МИСИС — это бесплатно для студентов любого вуза.</p>
+    </details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="register">
+  <div class="wrap">
+    <span class="eyebrow" style="margin-left:auto;margin-right:auto">10 октября 2026 · Москва</span>
+    <h2>Твоя история может<br>начаться здесь</h2>
+    <p class="sub">Регистрируйся бесплатно — и проведи день среди тех, кто уже строит бизнес, и тех, кто только начинает.</p>
+    <!-- TODO: заменить # на ссылку события в Timepad и вернуть target="_blank" rel="noopener" -->
+    <div class="final-cta-row" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn gold" style="font-size:16px;padding:18px 40px" href="#">Зарегистрироваться на Timepad</a>
+      <a class="btn ghost" style="font-size:16px;padding:18px 40px" href="https://t.me/misis_entrepreneurs" target="_blank" rel="noopener">Следить в Telegram</a>
+    </div>
+    <p style="margin-top:18px;font-size:13.5px;color:var(--cream-dim)">Регистрация откроется скоро — подпишись на канал, чтобы не пропустить</p>
+  </div>
+</section>
+</main>
+
+<!-- Липкая кнопка билетов (появляется при скролле) -->
+<a class="btn gold sticky-cta" id="sticky-cta" href="#register">Регистрация →</a>
+
+<!-- Пасхалка: мини-игра «волк-раннер», открывается кликом по волку в hero -->
+<div class="game-overlay" id="game-overlay" role="dialog" aria-label="Мини-игра: волк-раннер">
+  <div class="game-panel">
+    <button class="game-close" id="game-close" aria-label="Закрыть игру">✕</button>
+    <canvas id="game-canvas" width="740" height="240"></canvas>
+  </div>
+  <p class="game-hint"><b>Тап / пробел</b> — прыжок · <b>Esc</b> — выход<br><b style="color:#CBA65F">Топ-3 рекордсмена</b> получают мерч на форуме 🎁</p>
+  <a class="btn ghost small" href="https://t.me/+YQnCpLf7jzgwZGUy" target="_blank" rel="noopener">Прислать скрин в чат клуба</a>
+</div>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <img src="assets/kp_logo_line_light.svg" alt="МИСИС Entrepreneurs" style="height:40px;width:auto;margin-bottom:12px">
+      <div class="logo">MISIS <span>Business Forum</span> 2026</div>
+      Организатор — Клуб предпринимательства МИСИС
+    </div>
+    <div>
+      <a href="https://t.me/misis_entrepreneurs" target="_blank" rel="noopener">Telegram-канал клуба</a> ·
+      <a href="https://kpmisis.ru" target="_blank" rel="noopener">kpmisis.ru</a><br>
+      По вопросам форума: <a href="https://t.me/yyakushevamary" target="_blank" rel="noopener">@yyakushevamary</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Обратный отсчёт до открытия регистрации на площадке: 10 октября 2026, 11:00 МСК
+  const target = new Date("2026-10-10T11:00:00+03:00").getTime();
+  const cells = {d:cdEl("cd-d"),h:cdEl("cd-h"),m:cdEl("cd-m"),s:cdEl("cd-s")};
+  function cdEl(id){return document.getElementById(id)}
+  function tick(){
+    let diff = target - Date.now();
+    if (diff <= 0) {
+      clearInterval(cdTimer);
+      document.getElementById("countdown").innerHTML =
+        '<p style="font-family:\'Unbounded\';font-size:18px;color:var(--cream)">Форум уже идёт — встречаемся на Ленинском, 4! 🎉</p>';
+      return;
+    }
+    const d = Math.floor(diff/864e5); diff -= d*864e5;
+    const h = Math.floor(diff/36e5);  diff -= h*36e5;
+    const m = Math.floor(diff/6e4);   diff -= m*6e4;
+    const s = Math.floor(diff/1e3);
+    cells.d.textContent = d;
+    cells.h.textContent = String(h).padStart(2,"0");
+    cells.m.textContent = String(m).padStart(2,"0");
+    cells.s.textContent = String(s).padStart(2,"0");
+  }
+  tick(); const cdTimer = setInterval(tick, 1000);
+
+  // Мобильное меню
+  const burger = document.getElementById("burger");
+  const navLinks = document.getElementById("nav-links");
+  burger.addEventListener("click", () => {
+    const open = navLinks.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open);
+    burger.textContent = open ? "✕" : "☰";
+  });
+  function closeMenu(){
+    navLinks.classList.remove("open");
+    burger.setAttribute("aria-expanded", "false");
+    burger.textContent = "☰";
+  }
+  navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+  // закрытие меню по клику/тапу вне его области
+  document.addEventListener("click", e => {
+    if (navLinks.classList.contains("open") &&
+        !navLinks.contains(e.target) && !burger.contains(e.target)) closeMenu();
+  });
+
+  // Автоподгонка заголовков: ужимаем кегль, пока самое длинное слово не влезет целиком
+  // Авто-подгонка кегля: уменьшаем заголовок, пока самое длинное слово не влезет
+  // в строку ЦЕЛИКОМ. Слова никогда не разбиваются (CSS word-break:keep-all) —
+  // вместо разрыва слова уменьшается шрифт.
+  function fitHeadings(){
+    document.querySelectorAll(".h2, .hero h1, .prt-band h3, .final h2").forEach(el => {
+      el.style.fontSize = "";
+      let size = parseFloat(getComputedStyle(el).fontSize);
+      let guard = 80;
+      while (el.scrollWidth > el.clientWidth + 1 && size > 14 && guard-- > 0){
+        size -= 1;
+        el.style.fontSize = size + "px";
+      }
+    });
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitHeadings);
+  addEventListener("load", fitHeadings);
+  fitHeadings();
+  let fitT;
+  addEventListener("resize", () => { clearTimeout(fitT); fitT = setTimeout(fitHeadings, 150); }, {passive:true});
+
+  // ===== Анимации (уважает prefers-reduced-motion) =====
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!reduced) {
+    document.querySelectorAll("main section:not(.hero) .eyebrow, main section:not(.hero) .h2, main section:not(.hero) .sub, .prt-band, .club-stats, .lineup-head")
+      .forEach(el => el.classList.add("reveal"));
+    [".stats-grid > *", ".aud-grid > *", ".format-grid > *", ".spk-grid > *",
+     ".prt-logos > *", ".timeline .tl-row", "#faq details"]
+      .forEach(sel => {
+        const stagger = matchMedia("(max-width:560px)").matches ? 25 : 45;
+        document.querySelectorAll(sel).forEach((el, i) => {
+          el.classList.add("reveal");
+          el.style.transitionDelay = (i * stagger) + "ms";
+        });
+      });
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("in");
+      if (e.target.classList.contains("club-stats"))
+        e.target.querySelectorAll(".club-stat b").forEach(runCounter);
+      io.unobserve(e.target);
+      setTimeout(() => { e.target.classList.remove("reveal"); e.target.style.transitionDelay = ""; }, 1300);
+    }), {threshold:.12, rootMargin:"0px 0px -40px 0px"});
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  }
+
+  // Count-up цифр при попадании в экран
+  const counted = new WeakSet();
+  function runCounter(el){
+    if (counted.has(el)) return;
+    counted.add(el);
+    const m = el.textContent.match(/^([^0-9]*)(\d+)(.*)$/);
+    if (!m) return;
+    const [, pre, numStr, suf] = m, end = +numStr, t0 = performance.now(), dur = 1000;
+    (function step(t){
+      const p = Math.min(1, (t - t0) / dur), ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = pre + Math.round(end * ease) + suf;
+      if (p < 1) requestAnimationFrame(step);
+    })(t0);
+  }
+  if (!reduced) {
+    const cio = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      cio.unobserve(e.target);
+      runCounter(e.target);
+    }), {threshold:.5});
+    document.querySelectorAll(".stat b").forEach(el => cio.observe(el));
+  }
+
+  // Параллакс волка + тень шапки + липкая кнопка билетов
+  const wolf = document.querySelector(".wolf-mark");
+  const headerEl = document.querySelector("header");
+  const stickyCta = document.getElementById("sticky-cta");
+  let ticking = false;
+  addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      headerEl.classList.toggle("scrolled", scrollY > 10);
+      if (stickyCta) stickyCta.classList.toggle("show", scrollY > innerHeight * 0.6);
+      if (!reduced && wolf && scrollY < innerHeight * 1.3 && innerWidth > 560)
+        wolf.style.transform = `translateY(calc(-52% + ${scrollY * 0.16}px))`;
+      ticking = false;
+    });
+  }, {passive:true});
+  addEventListener("resize", () => { if (wolf) wolf.style.transform = ""; }, {passive:true});
+
+  // ===== Пасхалка: волк-раннер v2 =====
+  (function(){
+    const overlay = document.getElementById("game-overlay");
+    const canvas = document.getElementById("game-canvas");
+    const closeBtn = document.getElementById("game-close");
+    const trigger = document.querySelector(".hero .wolf-mark");
+    if (!overlay || !canvas || !trigger) return;
+    const ctx = canvas.getContext("2d");
+    const panel = overlay.querySelector(".game-panel");
+    let W = 740, H = 260, FLOOR = H - 26;
+    function initSize(){
+      const pw = panel.getBoundingClientRect().width || 740;
+      W = Math.round(Math.max(300, Math.min(pw, 740)));
+      H = 260; FLOOR = H - 26;
+      const dpr = Math.min(2, window.devicePixelRatio || 1);
+      canvas.width = W * dpr; canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    const narrow = () => W < 500;
+    const wolfSprite = new Image(); wolfSprite.src = "assets/kp_wolf.svg";
+
+    const HI_KEY = "mbf_runner_hi";
+    const GOLD = "#CBA65F", BLUE = "#2B59FF", CREAM = "#F4EBDC";
+    let running=false, dead=false, deadAt=0, rafId=null, frame=0;
+    let hi = +(localStorage.getItem(HI_KEY) || 0);
+    let wolf, obstacles, coins, parts, popups, stars, scoreF, score, speed, distAcc, nextGap, groundShift;
+    let mode, boss, projectiles, banner, tier, nextBoss;
+
+    const rnd = (a,b) => a + Math.random()*(b-a);
+    const BOSSES = ["СЕССИЯ", "ДЕДЛАЙН", "КАССОВЫЙ РАЗРЫВ", "КОНКУРЕНТ"];
+    const SKIES  = ["rgba(43,89,255,.14)", "rgba(124,77,255,.16)", "rgba(255,64,90,.13)", "rgba(203,166,95,.15)", "rgba(43,89,255,.20)"];
+
+    function reset(){
+      wolf = {x: narrow() ? 36 : 64, w:84, h:54, y:FLOOR-54, vy:0, onGround:true};
+      obstacles=[]; coins=[]; parts=[]; popups=[];
+      stars = Array.from({length:46},()=>({x:rnd(0,W), y:rnd(12,150), r:rnd(.6,1.7), v:rnd(.12,.45)}));
+      scoreF=0; score=0; speed=narrow()?4.2:5; distAcc=0; nextGap=460; groundShift=0; frame=0; dead=false;
+      mode="run"; boss=null; projectiles=[]; banner=null; tier=0; nextBoss=250;
+    }
+    function showBanner(txt, life){ banner = {txt, life, total:life}; }
+    function startBoss(){
+      mode = "boss";
+      const name = BOSSES[Math.min(tier, BOSSES.length-1)] + (tier >= BOSSES.length ? " " + (tier - BOSSES.length + 2) : "");
+      boss = {name, x:Math.max(W-150, Math.round(W*0.55)), baseY:60, t:0, shotIn:70, telegraph:0, dodged:0, need:9 + tier*3};
+      showBanner("⚠ БОСС: " + name, 110);
+    }
+    function endBoss(){
+      burst(boss.x+45, boss.baseY+40, GOLD, 40);
+      scoreF += 150;
+      popups.push({x:boss.x+40, y:boss.baseY+30, txt:"+150", life:48});
+      showBanner("БОСС ПОВЕРЖЕН! +150", 100);
+      tier++; nextBoss = score + 300 + tier*50;
+      boss = null; projectiles = []; mode = "run"; distAcc = 0;
+    }
+    function jump(){
+      if (!running) return;
+      if (dead) { if (performance.now()-deadAt>450) reset(); return; }
+      if (wolf.onGround) { wolf.vy = -10.6; wolf.onGround = false; }
+    }
+    function burst(x,y,color,n){
+      for(let i=0;i<n;i++) parts.push({x,y,vx:rnd(-2.6,2.6),vy:rnd(-4,-.5),life:rnd(18,34),color});
+    }
+    function brandPixel(x,y,s,color,glow){
+      if (glow){ ctx.shadowColor=color; ctx.shadowBlur=10; }
+      ctx.fillStyle=color;
+      ctx.beginPath();
+      ctx.moveTo(x,y); ctx.lineTo(x+s/2,y); ctx.lineTo(x+s/2,y+s/2);
+      ctx.lineTo(x+s,y+s/2); ctx.lineTo(x+s,y+s); ctx.lineTo(x,y+s);
+      ctx.closePath(); ctx.fill();
+      ctx.shadowBlur=0;
+    }
+    function spawnObstacle(){
+      if (score > 120 && Math.random() < 0.4){
+        const high = Math.random() < 0.5;
+        const y = high ? FLOOR - rnd(88, 130) : FLOOR - rnd(42, 56);
+        obstacles.push({type:"fly", x:W+30, y, s:19, t:rnd(0,6)});
+      } else {
+        const maxStack = score>170 ? 3 : score>60 ? 2 : 1;
+        const stack = 1 + Math.floor(rnd(0, maxStack));
+        const s = rnd(17,21);
+        obstacles.push({type:"ground", x:W+30, w:s, h:stack*s, s, stack});
+      }
+      if (Math.random()<0.55)
+        coins.push({x:W+30+rnd(140,300), y:FLOOR-rnd(58,108), s:15, t:rnd(0,6)});
+    }
+    function step(){
+      frame++;
+      wolf.vy += 0.55; wolf.y += wolf.vy;
+      if (wolf.y >= FLOOR-wolf.h){
+        if (!wolf.onGround) burst(wolf.x+wolf.w*0.3, FLOOR-2, "rgba(244,235,220,.8)", 5);
+        wolf.y = FLOOR-wolf.h; wolf.vy = 0; wolf.onGround = true;
+      }
+      if (mode === "run"){
+        distAcc += speed;
+        if (distAcc >= nextGap){
+          spawnObstacle();
+          distAcc = 0;
+          nextGap = 270 + speed*28 + rnd(0,180);
+        }
+        if (score >= nextBoss) startBoss();
+      } else if (boss){
+        boss.t += 0.05;
+        boss.shotIn--;
+        if (boss.shotIn === 12) boss.telegraph = 12;
+        if (boss.telegraph > 0) boss.telegraph--;
+        if (boss.shotIn <= 0){
+          const roller = Math.random() < 0.55;
+          projectiles.push(roller
+            ? {kind:"roll", x:boss.x, y:FLOOR-17, s:17, t:0}
+            : {kind:"dart", x:boss.x, y:FLOOR-96, s:14, t:0});
+          boss.shotIn = Math.max(34, 62 - tier*6) + rnd(0,16);
+        }
+        projectiles.forEach(p => {
+          p.x -= speed*1.3 + 2.2; p.t += 0.3;
+          if (!p.dodged && p.x + p.s < wolf.x){ p.dodged = true; boss.dodged++; }
+        });
+        projectiles = projectiles.filter(p => p.x + p.s > -30);
+        if (boss.dodged >= boss.need) endBoss();
+      }
+      if (banner){ banner.life--; if (banner.life <= 0) banner = null; }
+      obstacles.forEach(o => {
+        o.x -= o.type === "fly" ? speed * 1.18 : speed;
+        if (o.type === "fly") o.t += 0.18;
+      });
+      obstacles = obstacles.filter(o => o.x + (o.w || o.s) > -40);
+      coins.forEach(c => { c.x -= speed; c.t += 0.12; });
+      coins = coins.filter(c => c.x+c.s > -30);
+      parts.forEach(p => { p.x+=p.vx; p.y+=p.vy; p.vy+=0.18; p.life--; });
+      parts = parts.filter(p => p.life>0);
+      popups.forEach(p => p.life--);
+      popups = popups.filter(p => p.life>0);
+      groundShift = (groundShift + speed) % 28;
+      stars.forEach(st => { st.x -= st.v; if (st.x < -3) { st.x = W+3; st.y = rnd(12,150); } });
+      coins = coins.filter(c => {
+        const hit = wolf.x < c.x+c.s && wolf.x+wolf.w > c.x && wolf.y < c.y+c.s && wolf.y+wolf.h > c.y;
+        if (hit){
+          scoreF += 25;
+          burst(c.x+c.s/2, c.y+c.s/2, GOLD, 9);
+          popups.push({x:c.x, y:c.y, txt:"+25", life:38});
+        }
+        return !hit;
+      });
+      const pad = 9;
+      const hazards = obstacles.map(o => ({
+        x:o.x,
+        w:o.type==="fly" ? o.s : o.w,
+        y:o.type==="fly" ? o.y : FLOOR - o.h,
+        h:o.type==="fly" ? o.s : o.h
+      })).concat(projectiles.map(p => ({x:p.x, w:p.s, y:p.y, h:p.s})));
+      for (const o of hazards){
+        const hitX = wolf.x+pad < o.x+o.w && wolf.x+wolf.w-pad > o.x;
+        const hitY = wolf.y+pad < o.y+o.h && wolf.y+wolf.h-pad > o.y;
+        if (hitX && hitY){
+          dead = true; deadAt = performance.now();
+          burst(wolf.x+wolf.w/2, wolf.y+wolf.h/2, GOLD, 22);
+          if (score > hi){ hi = score; localStorage.setItem(HI_KEY, hi); }
+          break;
+        }
+      }
+      scoreF += speed/40;
+      score = Math.floor(scoreF);
+      speed = Math.min(12, 5 + score/90) * (narrow() ? 0.85 : 1);
+    }
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      const sky = ctx.createRadialGradient(W*0.7, FLOOR, 20, W*0.7, FLOOR, 420);
+      sky.addColorStop(0, SKIES[tier % SKIES.length]); sky.addColorStop(1,"rgba(43,89,255,0)");
+      ctx.fillStyle = sky; ctx.fillRect(0,0,W,H);
+      ctx.fillStyle = "rgba(244,235,220,.5)";
+      stars.forEach(st => ctx.fillRect(st.x, st.y, st.r, st.r));
+      ctx.strokeStyle = "rgba(244,235,220,.45)"; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(0,FLOOR); ctx.lineTo(W,FLOOR); ctx.stroke();
+      ctx.fillStyle = "rgba(244,235,220,.22)";
+      for (let x = -groundShift; x < W; x += 28) ctx.fillRect(x, FLOOR+8, 13, 2);
+      coins.forEach(c => {
+        const sq = Math.abs(Math.sin(c.t))*0.6 + 0.4;
+        ctx.save(); ctx.translate(c.x+c.s/2, c.y+c.s/2); ctx.scale(sq,1);
+        brandPixel(-c.s/2, -c.s/2, c.s, GOLD, true);
+        ctx.restore();
+      });
+      obstacles.forEach(o => {
+        if (o.type === "fly"){
+          const wing = Math.sin(o.t) * 7;
+          brandPixel(o.x, o.y + wing*0.25, o.s, BLUE, true);
+          ctx.fillStyle = "rgba(43,89,255,.55)";
+          ctx.fillRect(o.x + 4, o.y - 7 + wing, o.s - 8, 5);
+        } else {
+          for (let i=0;i<o.stack;i++)
+            brandPixel(o.x, FLOOR-(i+1)*o.s, o.s-1.5, BLUE, true);
+        }
+      });
+      parts.forEach(p => { ctx.globalAlpha = Math.min(1,p.life/14); ctx.fillStyle=p.color; ctx.fillRect(p.x,p.y,3,3); });
+      ctx.globalAlpha = 1;
+      if (boss){
+        const by = boss.baseY + Math.sin(boss.t*2)*10;
+        ctx.save();
+        ctx.translate(boss.x+60, by+40);
+        ctx.scale(-1.18, 1.18);
+        ctx.filter = boss.telegraph > 0 ? "none" : "hue-rotate(195deg) saturate(1.6) brightness(.95)";
+        ctx.shadowColor = boss.telegraph > 0 ? GOLD : BLUE; ctx.shadowBlur = 22;
+        if (wolfSprite.complete && wolfSprite.naturalWidth)
+          ctx.drawImage(wolfSprite, -52, -34, 104, 68);
+        ctx.restore();
+        ctx.textAlign = "center";
+        ctx.fillStyle = CREAM; ctx.font = "700 12px Unbounded, sans-serif";
+        ctx.fillText(boss.name, boss.x+60, by - 12);
+        ctx.fillStyle = "rgba(244,235,220,.6)"; ctx.font = "600 11px Manrope, sans-serif";
+        ctx.fillText("увернись: " + boss.dodged + "/" + boss.need, boss.x+60, by + 4);
+      }
+      projectiles.forEach(p => {
+        if (p.kind === "roll"){
+          ctx.save(); ctx.translate(p.x+p.s/2, p.y+p.s/2); ctx.rotate(p.t);
+          brandPixel(-p.s/2, -p.s/2, p.s, "#FF5468", true);
+          ctx.restore();
+        } else {
+          ctx.shadowColor = "#FF5468"; ctx.shadowBlur = 9;
+          ctx.fillStyle = "#FF5468";
+          ctx.fillRect(p.x, p.y+4, p.s+10, 5);
+          ctx.shadowBlur = 0;
+          ctx.fillStyle = "rgba(255,84,104,.4)";
+          ctx.fillRect(p.x+p.s+10, p.y+5, 14, 3);
+        }
+      });
+      popups.forEach(p => {
+        ctx.globalAlpha = Math.min(1, p.life/18);
+        ctx.fillStyle = GOLD; ctx.font = "700 13px Unbounded, sans-serif"; ctx.textAlign = "center";
+        ctx.fillText(p.txt, p.x, p.y - (38 - p.life) * 0.9);
+      });
+      ctx.globalAlpha = 1;
+      if (banner){
+        const k = banner.life / banner.total;
+        ctx.globalAlpha = Math.min(1, k*3) * Math.min(1, (1-k)*6 + .25);
+        ctx.textAlign = "center";
+        ctx.fillStyle = banner.txt.startsWith("⚠") ? "#FF5468" : GOLD;
+        ctx.font = "700 24px Unbounded, sans-serif";
+        ctx.fillText(banner.txt, W/2, 64);
+        ctx.globalAlpha = 1;
+      }
+      const bob = wolf.onGround && !dead ? Math.sin(frame*0.35)*1.6 : 0;
+      const tilt = dead ? 0.5 : Math.max(-0.16, Math.min(0.2, wolf.vy/34));
+      ctx.save();
+      ctx.translate(wolf.x+wolf.w/2, wolf.y+wolf.h/2+bob);
+      ctx.rotate(tilt);
+      if (wolfSprite.complete && wolfSprite.naturalWidth)
+        ctx.drawImage(wolfSprite, -wolf.w/2, -wolf.h/2, wolf.w, wolf.h);
+      else { ctx.fillStyle = GOLD; ctx.fillRect(-wolf.w/2,-wolf.h/2,wolf.w,wolf.h); }
+      ctx.restore();
+      ctx.textAlign="left";
+      ctx.fillStyle = CREAM; ctx.font = "700 15px Unbounded, sans-serif";
+      ctx.fillText("СЧЁТ " + score, 18, 32);
+      ctx.fillStyle = "rgba(244,235,220,.45)"; ctx.font = "700 12px Unbounded, sans-serif";
+      ctx.fillText("HI " + hi, 18, 52);
+      if (dead){
+        const bw = Math.min(440, W - 16);
+        ctx.fillStyle = "rgba(6,7,11,.78)";
+        ctx.fillRect(W/2-bw/2, H/2-64, bw, 124);
+        ctx.strokeStyle = "rgba(43,89,255,.6)"; ctx.strokeRect(W/2-bw/2, H/2-64, bw, 124);
+        ctx.textAlign="center";
+        ctx.fillStyle = CREAM; ctx.font = "700 21px Unbounded, sans-serif";
+        ctx.fillText("Волк споткнулся!", W/2, H/2-28);
+        ctx.font = "600 13.5px Manrope, sans-serif"; ctx.fillStyle = "rgba(244,235,220,.85)";
+        ctx.fillText("Счёт " + score + "  ·  Рекорд " + hi, W/2, H/2-4);
+        ctx.fillStyle = GOLD;
+        ctx.fillText("Топ-3 рекорда = мерч! Пришли скрин в чат клуба 🎁", W/2, H/2+20);
+        ctx.fillStyle = "rgba(244,235,220,.6)";
+        ctx.fillText("Пробел или тап — ещё раз", W/2, H/2+44);
+      } else if (frame < 3){
+        ctx.textAlign="center";
+        ctx.fillStyle = "rgba(244,235,220,.85)"; ctx.font = "600 14px Manrope, sans-serif";
+        ctx.fillText("Тап или пробел — прыжок! Топ-3 рекорда получают мерч 🎁", W/2, H/2);
+      }
+    }
+    function loop(){
+      if (!running) return;
+      if (!dead) step();
+      else { parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=0.18;p.life--;}); parts=parts.filter(p=>p.life>0); }
+      draw();
+      rafId = requestAnimationFrame(loop);
+    }
+    let savedScroll = 0;
+    function open(){
+      overlay.classList.add("open");
+      initSize(); reset(); running = true;
+      savedScroll = window.scrollY;
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.top = -savedScroll + "px";
+      document.body.style.width = "100%";
+      loop();
+    }
+    function close(){
+      running = false;
+      if (rafId) cancelAnimationFrame(rafId);
+      overlay.classList.remove("open");
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+      window.scrollTo(0, savedScroll);
+    }
+    addEventListener("resize", () => {
+      if (!running) return;
+      initSize();
+      stars.forEach(st => { if (st.x > W) st.x = rnd(0, W); });
+      if (boss) boss.x = Math.max(W-150, Math.round(W*0.55));
+    }, {passive:true});
+    trigger.addEventListener("touchstart", () => {
+      trigger.style.opacity = ".28";
+      setTimeout(() => { trigger.style.opacity = ""; }, 400);
+    }, {passive:true});
+    trigger.addEventListener("click", open);
+    closeBtn.addEventListener("click", close);
+    overlay.addEventListener("click", e => { if (e.target === overlay) close(); });
+    canvas.addEventListener("pointerdown", e => { e.preventDefault(); jump(); });
+    addEventListener("keydown", e => {
+      if (!running) return;
+      if (e.code === "Space" || e.code === "ArrowUp") { e.preventDefault(); jump(); }
+      if (e.code === "Escape") close();
+    });
+  })();
+
+  // Spotlight + наклон карточек (только мышь, не тач)
+  if (!reduced && matchMedia("(hover:hover) and (pointer:fine)").matches) {
+    document.querySelectorAll(".aud, .fmt, .club-stat").forEach(card => {
+      const tilts = card.classList.contains("aud") || card.classList.contains("fmt");
+      card.addEventListener("mousemove", e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        card.style.setProperty("--mx", (x * 100) + "%");
+        card.style.setProperty("--my", (y * 100) + "%");
+        if (tilts) card.style.transform =
+          `translateY(-4px) rotateX(${(0.5 - y) * 5}deg) rotateY(${(x - 0.5) * 5}deg)`;
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "";
+        card.style.removeProperty("--mx");
+        card.style.removeProperty("--my");
+      });
+    });
+  }
+</script>
+</body>
+</html>
